@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+var bodyParser = require('body-parser');
 const Post = require('../models/camiones');
+
+var urlencodedParer=bodyParser.urlencoded({ extended: true });
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -13,7 +16,7 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', async (req,res) => {
+   router.post('/',  urlencodedParer ,async (req,res) => {
      const post = new Post({
         Codigo_Camion: req.body.Codigo_Camion,
         Descripcion : req.body.Descripcion,
@@ -31,6 +34,7 @@ router.get('/', async (req,res) =>{
      }catch{
          res.json({message: err});
      }
+     res.render('/camiones', {data: req.body})
    });
 
    //Specific post
@@ -70,7 +74,8 @@ router.get('/', async (req,res) =>{
     } catch (err) {
         res.json({message: err});
        }
-   })
+       res.redirect('/camiones');
+   });
 
 
   module.exports = router;

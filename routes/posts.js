@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/usuarios');
+var bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -13,7 +16,7 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', async (req,res) => {
+   router.post('/', urlencodedParser,async (req,res) => {
      const post = new Post({
         Email : req.body.Email,
         User : req.body.User,
@@ -28,6 +31,8 @@ router.get('/', async (req,res) =>{
      }catch{
          res.json({message: err});
      }
+
+     res.render('/posts', {data: req.body})
    });
 
    //Specific post

@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+var bodyParser = require('body-parser');
 const Post = require('../models/bodegas');
+
+var urlencodedParer=bodyParser.urlencoded({ extended: true });
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -13,7 +16,7 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', async (req,res) => {
+   router.post('/', urlencodedParer ,async (req,res) => {
      const post = new Post({
         Codigo_Bodega : req.body.Codigo_Bodega,
         Nombre : req.body.Nombre,
@@ -31,6 +34,9 @@ router.get('/', async (req,res) =>{
      }catch{
          res.json({message: err});
      }
+
+     res.render('/bodegas', {data: req.body})
+
    });
 
    //Specific post
@@ -70,7 +76,8 @@ router.get('/', async (req,res) =>{
     } catch (err) {
         res.json({message: err});
        }
-   })
+       res.redirect('/bodegas');
+   });
 
 
   module.exports = router;

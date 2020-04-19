@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="/routes/bodegas.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body style="background-color:powderblue;">
+    <div class="wrapper">
+        <script>
+             function check() {
+                var username= document.getElementById("usernameBox").value;
+                var password= document.getElementById("passwordBox").value;
+                if (username=="user" && password=="123"){
+                    Response.redirect("bodegas.html");
+
+                }else {
+                    alert("Usuario o contraseña no validos")
+                }
+            }
+
+
+        </script>
+
+        <div class="login-form">
+            <form action="" method="post" class="text-center">
+                <h2 class="text-center">Log in</h2>
+                <div class="form-group">
+                    <input id="usernameBox" name="usernameBox" type="text" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input id="passwordBox" name="passwordBox" type="password" placeholder="Password"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <button id="btnAceptar" type="submit" onclick="check()">Log in</button>
+
+                </div>
+                <div class="container">
+
+                    <span class="psw">Olvidó su <a href="#">contraseña?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>

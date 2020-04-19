@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+var bodyParser = require('body-parser');
 const Post = require('../models/eventos');
+
+var urlencodedParer=bodyParser.urlencoded({ extended: true });
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -13,7 +16,7 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', async (req,res) => {
+   router.post('/', urlencodedParer ,async (req,res) => {
      const post = new Post({
         Codigo_Evento: req.body.Codigo_Evento,
         Descripcion_Evento: req.body.Descripcion_Evento
@@ -25,6 +28,7 @@ router.get('/', async (req,res) =>{
      }catch{
          res.json({message: err});
      }
+     res.render('/eventos', {data: req.body})
    });
 
    //Specific post
@@ -64,7 +68,8 @@ router.get('/', async (req,res) =>{
     } catch (err) {
         res.json({message: err});
        }
-   })
+       res.redirect('/eventos');
+   });
 
 
   module.exports = router;

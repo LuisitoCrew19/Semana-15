@@ -17,6 +17,8 @@ const bodegasRoute = require('./routes/bodegas');
 const camionesRoute = require('./routes/camiones');
 const tpmRoute = require('./routes/tipos_materia_prima');
 const mpRoute = require('./routes/materia_prima');
+const proveedoresRoute = require('./routes/proveedores');
+const productosRote = require('./routes/productos');
 
 app.use('/posts', postsRoute);
 app.use('/roles', rolesRoute);
@@ -27,11 +29,13 @@ app.use('/bodegas', bodegasRoute);
 app.use('/camiones', camionesRoute);
 app.use('/tipos_materia_prima', tpmRoute);
 app.use('/materia_prima', mpRoute);
+app.use('/proveedores', proveedoresRoute);
+app.use('/productos', productosRote);
 //routes
 
-app.get('/',(req,res) => {
-  res.send('Vamos bien')
-});
+app.use("/", (req, res) => {
+  res.sendFile(__dirname + "/tipo_materia_prima.html");
+ });
 
 
 

@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var bodyParser = require('body-parser');
-const Post = require('../models/roles');
-
-var urlencodedParer=bodyParser.urlencoded({ extended: true });
-
+const Post = require('../models/Proveedores');
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -17,12 +13,17 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', urlencodedParer ,async (req,res) => {
+   router.post('/', async (req,res) => {
      const post = new Post({
-        Codigo_Rol: req.body.Codigo_Rol,
-        Nombre_Rol: req.body.Nombre_Rol,
-        Roles_Disponibles: req.body.Roles_Disponibles,
-        Roles_Asignados: req.body.Roles_Asignados
+        Codigo_Proveedor: req.body.Codigo_Proveedor,
+        Cedula : req.body.Cedula,
+        Nombre_Proveedor: req.body.Nombre_Proveedor,
+        Correo_Electronico: req.body.Correo_Electronico,
+        Contacto: req.body.Contacto,
+        Telefono_Contacto:req.body.Telefono_Contacto,
+        Direccion:req.body.Direccion
+
+
         
      });
      try{
@@ -31,7 +32,6 @@ router.get('/', async (req,res) =>{
      }catch{
          res.json({message: err});
      }
-     res.render('/roles', {data: req.body})
    });
 
    //Specific post
@@ -62,7 +62,7 @@ router.get('/', async (req,res) =>{
        try{
         const updatedPost = await Post.updateOne(
             {_id: req.params.postId}, 
-            {$set: {Codigo_Rol:req.body.Codigo_Rol}}
+            {$set: {Codigo_Proveedor:req.body.Codigo_Proveedor}}
             
             );
 
@@ -71,8 +71,7 @@ router.get('/', async (req,res) =>{
     } catch (err) {
         res.json({message: err});
        }
-       res.redirect('/roles');
-   });
+   })
 
 
   module.exports = router;

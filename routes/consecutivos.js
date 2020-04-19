@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+var bodyParser = require('body-parser');
 const Post = require('../models/consecutivos');
+
+var urlencodedParer=bodyParser.urlencoded({ extended: true });
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -13,7 +16,7 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', async (req,res) => {
+   router.post('/', urlencodedParer ,async (req,res) => {
      const post = new Post({
         Tipo_Consecutivo : req.body.Tipo_Consecutivo,
         Descripcion : req.body.Descripcion,
@@ -26,6 +29,7 @@ router.get('/', async (req,res) =>{
      }catch{
          res.json({message: err});
      }
+     res.render('/consecutivos', {data: req.body})
    });
 
    //Specific post
@@ -65,7 +69,8 @@ router.get('/', async (req,res) =>{
     } catch (err) {
         res.json({message: err});
        }
-   })
+       res.redirect('/consecutivos');
+   });
 
 
   module.exports = router;
