@@ -40,7 +40,7 @@ router.get('/', async (req,res) =>{
    });
 
    //Specific post
-   router.get('/:postId', async (req,res) => {
+   router.get('/:postId', urlencodedParer ,async (req,res) => {
         try{
         const post = await Post.findById(req.params.postId);
         res.json(post);
@@ -48,6 +48,9 @@ router.get('/', async (req,res) =>{
         } catch (err){
               res.json({message: err});
         }
+         
+        res.render('/bodegas', {data: req.body})
+
    });
 
    //Delete post

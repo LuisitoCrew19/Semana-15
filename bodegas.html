@@ -62,7 +62,7 @@
         <h1>Informacion de Bodegas</h1>
         <div style="position: relative; left: 50px;">
             <form method="POST" action="/bodegas">
-                <label>Bodega </label><br>
+                <label>Crear Bodega </label><br>
                 <input type="text" name="Codigo_Bodega" placeholder="Codigo..." required>
                 <br>
                 <br>
@@ -85,25 +85,21 @@
                  <br>
                 <br>
                 <input type="text" name="Espacio_Bodega" placeholder="Espacio en Bodega.." required>
-                <input type="submit" value="Agregar ">
+                <input type="submit" value="Crear">
+            </form>
+        
+            <form method="GET" action="/bodegas" target="_blank">
+                <label>Buscar Bodega </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="submit" value="Aceptar">
             </form>
 
-            <div>
-
-                <br>
-                <br>
-
-                <button id="btnEliminar" onsubmit="">Eliminar</button>
-               
-                <button id="btnCrear" onsubmit="">Crear</button>
-                <br>
-                <br>
-
-
-
-
-
-            </div>
+            <form  action="/bodegas/{{}}">
+                <label>Eiminar Bodega </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="submit" value="Eliminar">
+            </form>
+           
             <div>
                 <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
             </div>

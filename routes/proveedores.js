@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+var bodyParser = require('body-parser');
 const Post = require('../models/Proveedores');
+
+var urlencodedParer=bodyParser.urlencoded({ extended: true });
 
 //get back all posts
 router.get('/', async (req,res) =>{
@@ -13,7 +16,7 @@ router.get('/', async (req,res) =>{
 
 });
   //submit posts
-   router.post('/', async (req,res) => {
+   router.post('/', urlencodedParer ,async (req,res) => {
      const post = new Post({
         Codigo_Proveedor: req.body.Codigo_Proveedor,
         Cedula : req.body.Cedula,
@@ -22,16 +25,14 @@ router.get('/', async (req,res) =>{
         Contacto: req.body.Contacto,
         Telefono_Contacto:req.body.Telefono_Contacto,
         Direccion:req.body.Direccion
-
-
-        
-     });
+      });
      try{
      const savedPost = await post.save();
       res.json(savedPost);
      }catch{
          res.json({message: err});
      }
+     res.render('/proveedores', {data: req.body})
    });
 
    //Specific post
@@ -71,6 +72,7 @@ router.get('/', async (req,res) =>{
     } catch (err) {
         res.json({message: err});
        }
+       res.redirect('/proveedores');
    })
 
 
