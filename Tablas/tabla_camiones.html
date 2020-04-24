@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Tipos Materia Prima</title>
+    <title>Materia Prima</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script type="text/javascript" src="/routes/bodegas.js"></script>
@@ -35,40 +36,39 @@
                             Informacion
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="bodegas.html">Bodegas</a>
-                            <a class="dropdown-item" href="camiones.html">Camiones</a>
-                            <a class="dropdown-item" href="consecutivos.html">Consecutivos</a>
-                            <a class="dropdown-item" href="eventos.html">Eventos</a>
-                            <a class="dropdown-item" href="materia_prima.html">Materia Prima</a>
-                            <a class="dropdown-item" href="roles.html">Roles</a>
-                            <a class="dropdown-item" href="tipo_materia_prima.html">Tipo de Materia Prima</a>
+                            <a class="dropdown-item" href="../bodegas.html">Bodegas</a>
+                            <a class="dropdown-item" href="../camiones.html">Camiones</a>
+                            <a class="dropdown-item" href="../consecutivos.html">Consecutivos</a>
+                            <a class="dropdown-item" href="../eventos.html">Eventos</a>
+                            <a class="dropdown-item" href="../materia_prima.html">Materia Prima</a>
+                            <a class="dropdown-item" href="../roles.html">Roles</a>
+                            <a class="dropdown-item" href="../tipo_materia_prima.html">Tipo de Materia Prima</a>
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Login.html">Salir</a>
+                            <a class="dropdown-item" href="../Login.html">Salir</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tablas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../tabla_bodegas.html">Bodegas</a>
-                            <a class="dropdown-item" href="../tabla_camiones.html">Camiones</a>
-                            <a class="dropdown-item" href="../tabla_consecutivos.html">Consecutivos</a>
-                            <a class="dropdown-item" href="../tabla_eventos.html">Eventos</a>
-                            <a class="dropdown-item" href="../tabla_materiaprima.html">Materia Prima</a>
-                            <a class="dropdown-item" href="../tabla_roles.html">Roles</a>
-                            <a class="dropdown-item" href="../tabla_tipo_materiaprima.html">Tipo de Materia Prima</a>
+                            <a class="dropdown-item" href="tabla_bodegas.html">Bodegas</a>
+                            <a class="dropdown-item" href="tabla_camiones.html">Camiones</a>
+                            <a class="dropdown-item" href="tabla_consecutivos.html">Consecutivos</a>
+                            <a class="dropdown-item" href="tabla_eventos.html">Eventos</a>
+                            <a class="dropdown-item" href="tabla_materiaprima.html">Materia Prima</a>
+                            <a class="dropdown-item" href="tabla_roles.html">Roles</a>
+                            <a class="dropdown-item" href="tabla_tipo_materiaprima.html">Tipo de Materia Prima</a>
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Login.html">Salir</a>
+                            <a class="dropdown-item" href="../Login.html">Salir</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="posts.html">Usuario</a>
+                        <a class="nav-link" href="../posts.html">Usuario</a>
                     </li>
-                    
                 </ul>
                 <div id="btn-nav" style="right: 50px; position: absolute; ">
                     <form class="form-inline my-2 my-lg-0">
@@ -78,39 +78,11 @@
                 </div>
             </div>
         </nav>
-
-        <h1>Informacion de Tipo de Materia Prima</h1>
-        <div style="position: relative; left: 50px;">
-        <form method="POST" action="/tipos_materia_prima">
-            <label>Tipo Materia Prima</label><br>
-            <input type="text" name="Codigo_TPM" placeholder="Codigo..." required>
-            <br>
-            <br>
-            <input type="text" name="Descripcion_TPM" placeholder="Descripcion..." required>
-            
-            <input type="submit" value="Agregar">
-        </form>
-        <div>
-
-            <br>
-            <br>
-    
-            <button id="btnEliminar" onsubmit="">Eliminar</button>
-            
-            <button id="btnCrear" onsubmit="">Crear</button>
-            <br>
-            <br>
-    
-    
-    
-    
-    
-        </div>
-        <div>
-            <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
-        </div>
+      
+        <button id="btnSalida" onclick="location.href='../Login.html'">Salir</button>
     </div>
-        <script src="./routes/tipos_materia_prima.js"></script>
+</div>
+        <script src="./routes/materia_prima.js"></script>
 </body>
 
 </html>
