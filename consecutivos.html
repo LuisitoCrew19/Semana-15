@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body style="background-color:powderblue;">
     <div class="wrapper">
@@ -23,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="Login.html">Tramesquirn S.A <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href=""><b>Tramesquin S.A</b> <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"></a>
@@ -44,6 +45,7 @@
                             <a class="dropdown-item" href="crear_pedidos_materia.html">Pedidos Materia</a>
                             <a class="dropdown-item" href="clientes.html">Clientes</a>
                             <a class="dropdown-item" href="parametros.html">Parametros</a>
+                            <a class="dropdown-item" href="productos.html">Productos</a> 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="Login.html">Salir</a>
                         </div>
@@ -63,7 +65,22 @@
                             <a class="dropdown-item" href="Tablas/tabla_tipo_materiaprima.html">Tipo de Materia Prima</a>
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Login.html">Salir</a>
+                            <a class="dropdown-item" href="Login.html">Log out</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Compras
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Seccion_Compras/productos.html">Productos</a>
+                            <a class="dropdown-item" href="Seccion de Compras//tabla_camiones.html">Materia Prima</a>
+                            <a class="dropdown-item" href="Seccion de Compras//tabla_consecutivos.html">Tipo de Materia Prima</a>
+                            
+                            <a class="dropdown-item" href="#"></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="Login.html">Log out</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -73,12 +90,12 @@
                 <div id="btn-nav" style="right: 50px; position: absolute; ">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Aceptar</button>
+                        <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div>
         </nav>
-
+        <div style="position: relative; left: 50px;">
         <h1>Informacion de Consecutivos</h1>
         <div style="position: relative; left: 50px;" >
         <form method="POST" action="/consecutivos">
@@ -115,7 +132,7 @@
         <div>
             <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
         </div>
-
+    </div>
     </div>
         <script src="./routes/consecutivos.js"></script>
 </body>
