@@ -41,7 +41,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
-//app.engine('html', require('ejs').renderFile);
+app.engine('html', require('ejs').renderFile);
 //import 
 
 const postsRoute = require('./routes/posts');
@@ -83,7 +83,7 @@ app.use('/crear_pedidos_materia', cpmRoute);
  //});
 
  app.get("/", checkAuthenticated, (req, res) => {
-  res.render('bodegas.ejs');
+  res.render('../bodegas.html');
  });
 
  app.get("/login", checkNotAuthenticated,(req, res) => {
