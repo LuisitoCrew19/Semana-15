@@ -79,9 +79,16 @@ app.use('/crear_pedidos_materia', cpmRoute);
   //res.sendFile(__dirname + "/bodegas.html");
  //});
 
+
  app.get("/", checkAuthenticated, (req, res) => {
-  res.render('index.ejs', {name: req.user.name});
- });
+  app.engine('html', require('ejs').renderFile);
+
+  res.render('../bodegas.html');
+  
+  
+
+
+  });
 
  app.get("/login", checkNotAuthenticated,(req, res) => {
   res.render('login.ejs');

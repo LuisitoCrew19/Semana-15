@@ -43,6 +43,9 @@
                             <a class="dropdown-item" href="../materia_prima.html">Materia Prima</a>
                             <a class="dropdown-item" href="../roles.html">Roles</a>
                             <a class="dropdown-item" href="../tipo_materia_prima.html">Tipo de Materia Prima</a>
+                            <a class="dropdown-item" href="../crear_pedidos_materia.html">Pedidos Materia</a>
+                            <a class="dropdown-item" href="../clientes.html">Clientes</a>
+                            <a class="dropdown-item" href="../parametros.html">Parametros</a>
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../Login.html">Salir</a>
@@ -79,10 +82,51 @@
             </div>
         </nav>
       
-        <button id="btnSalida" onclick="location.href='../Login.html'">Salir</button>
     </div>
 </div>
         <script src="./routes/materia_prima.js"></script>
+
+        <div id="table" style="left: 80px; position: absolute;">
+            <fieldset>
+            <table>
+                <tr>
+                    <th>Codigo</th>
+                    <td></td>
+                    
+                </tr>  
+                <tr>
+                    <th>Nombre</th>
+                    <td></td>
+                </tr> 
+                <tr>
+                    <th>Alias</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Ubicacion</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Unidad de Medida</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Tipo de Bodega</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Espacio en Bodega</th>
+                    <td></td>
+                </tr>
+
+            </table>
+        </fieldset>
+        </div>
+        <br>
+        <div style="margin-top: 400px; left: 50px; position: absolute;">
+        <button id="btnSalida" onclick="location.href='views/login.ejs'">Log out</button>
+    </div>
+
 </body>
 
 </html>
