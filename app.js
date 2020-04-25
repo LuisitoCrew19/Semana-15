@@ -83,7 +83,10 @@ app.use('/crear_pedidos_materia', cpmRoute);
  //});
 
  app.get("/", checkAuthenticated, (req, res) => {
+
   res.render('../bodegas.html');
+ 
+  
  });
 
  app.get("/login", checkNotAuthenticated,(req, res) => {
