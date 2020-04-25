@@ -81,38 +81,42 @@
         <div style="position: relative; left: 50px;" >
         <form method="POST" action="/parametros">
             <label>Parametros</label><br>
-            <input type="text" name="Nombre_Compania" placeholder="Codigo..." required>
+            <input type="text" name="Nombre_Compania" placeholder="Nombre de Compana..." required>
             <br>
             <br>
-            <input type="text" name="Telefono" placeholder="Descripcion..." required>
+            <input type="text" name="Telefono" placeholder="Telefono..." required>
             <br>
             <br>
-            <input type="text" name="Cedula_Juridica " placeholder="Valor..." required>
+            <input type="text" name="Cedula_Juridica" placeholder="Cedula_Juridica..." required>
             <br>
             <br>
-            <input type="text" name=" Mensaje_Saludo " placeholder="Prefijo..." required>
+            <input type="text" name="Mensaje_Saludo" placeholder="Saludo..." required>
             <br>
             <br>
-            <input type="text" name="Direccion_Establecimiento" placeholder="Prefijo..." required>
+            <input type="text" name="Direccion_Establecimiento" placeholder="Establecimiento..." required>
             <input type="submit" value="Agregar">
         </form>
    
-        <div>
+        <form method="GET" action="/parametros" target="_blank">
+            <label>Buscar Parametros </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Aceptar">
+        </form>
 
-            <br>
-            <br>
+        <form  action="/parametros?_method=DELETE" method="POST">
+            <label>Eiminar Parametros </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Eliminar">
+        </form>
 
-            <button id="btnEliminar" onsubmit="">Eliminar</button>
-           
-            <button id="btnCrear" onsubmit="">Crear</button>
-            <br>
-            <br>
+        <form method="POST" action="/parametros/:PostId">
+            <input type="hidden" name="_method" value="PATCH" /> 
+            <label>Modificar Parametros</label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="text" name="Nombre_Compania" placeholder="Nombre_Compania..." required>
+            <input type="submit" value="Aceptar">
+        </form>
 
-
-
-
-
-        </div>
         <div>
             <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
         </div>

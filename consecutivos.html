@@ -83,7 +83,7 @@
         <div style="position: relative; left: 50px;" >
         <form method="POST" action="/consecutivos">
             <label>Consecutivos</label><br>
-            <input type="text" name="Tipo_Consecutivo" placeholder="Codigo..." required>
+            <input type="text" name="Tipo_Consecutivo" placeholder="Tipo..." required>
             <br>
             <br>
             <input type="text" name="Descripcion" placeholder="Descripcion..." required>
@@ -93,25 +93,27 @@
             <br>
             <br>
             <input type="text" name="Prefijo" placeholder="Prefijo..." required>
-            <input type="submit" value="Agregar">
+            <input type="submit" value="Crear">
         </form>
    
-        <div>
+        <form method="GET" action="/consecutivos" target="_blank">
+            <label>Buscar Consecutivos </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Aceptar">
+        </form>
 
-            <br>
-            <br>
-
-            <button id="btnEliminar" onsubmit="">Eliminar</button>
-           
-            <button id="btnCrear" onsubmit="">Crear</button>
-            <br>
-            <br>
-
-
-
-
-
-        </div>
+        <form  action="/consecutivos?_method=DELETE"  method="POST">
+            <label>Eiminar Consecutivos </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Eliminar">
+        </form>
+        <form method="POST" action="/consecutivos/:PostId">
+            <input type="hidden" name="_method" value="PATCH" /> 
+            <label>Modificar Consecutivos </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="text" name="Tipo_Consecutivo" placeholder="Tipo..." required>
+            <input type="submit" value="Aceptar">
+        </form>
         <div>
             <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
         </div>

@@ -108,25 +108,29 @@
                 <br>
                 <br>
                 <input type="text" name="Estado" placeholder="Estado.." required>
-                <input type="submit" value="Agregar ">
+                <input type="submit" value="Crear">
             </form>
 
-            <div>
+            <form method="GET" action="/crear_pedidos_materia" target="_blank">
+                <label>Buscar Creacion de Pedidos </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="submit" value="Aceptar">
+            </form>
 
-                <br>
-                <br>
+            <form  action="/crear_pedidos_materia?_method=DELETE"  method="POST">
+                <label>Eiminar Creacion de Pedidos </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="submit" value="Eliminar">
+            </form>
 
-                <button id="btnEliminar" onsubmit="">Eliminar</button>
-               
-                <button id="btnCrear" onsubmit="">Crear</button>
-                <br>
-                <br>
+            <form method="POST" action="/crear_pedidos_materia/:PostId">
+                <input type="hidden" name="_method" value="PATCH" /> 
+                <label>Modificar Pedidos de Materia </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="text" name="Orden_Pedido" placeholder="Orden..." required>
+                <input type="submit" value="Aceptar">
+            </form>
 
-
-
-
-
-            </div>
             <div>
                 <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
             </div>

@@ -110,25 +110,29 @@
                 <br>
                 <br>
                 <input type="text" name="Direccion" placeholder="Direccion.." required>
-                <input type="submit" value="Agregar ">
+                <input type="submit" value="Crear">
             </form>
 
-            <div>
+            <form method="GET" action="/clientes" target="_blank">
+                <label>Buscar Clientes </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="submit" value="Aceptar">
+            </form>
 
-                <br>
-                <br>
+            <form  action="/clientes?_method=DELETE" method="POST">
+                <label>Eiminar Clientes </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="submit" value="Eliminar">
+            </form>
 
-                <button id="btnEliminar" onsubmit="">Eliminar</button>
-               
-                <button id="btnCrear" onsubmit="">Crear</button>
-                <br>
-                <br>
+            <form method="POST" action="/clientes/:PostId">
+                <input type="hidden" name="_method" value="PATCH" /> 
+                <label>Modificar Clientes </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="text" name="Codigo_Identificacion" placeholder="Codigo..." required>
+                <input type="submit" value="Aceptar">
+            </form>
 
-
-
-
-
-            </div>
             <div>
                 <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
             </div>

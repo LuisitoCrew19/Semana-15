@@ -101,22 +101,24 @@
             <input type="submit" value="Agregar">
         </form>
    
-        <div>
+        <form method="GET" action="/productos" target="_blank">
+            <label>Buscar Productos </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Aceptar">
+        </form>
 
-            <br>
-            <br>
-
-            <button id="btnEliminar" onsubmit="">Eliminar</button>
-           
-            <button id="btnCrear" onsubmit="">Crear</button>
-            <br>
-            <br>
-
-
-
-
-
-        </div>
+        <form  action="/productos?_method=DELETE" method="POST">
+            <label>Eiminar Productos </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Eliminar">
+        </form>
+        <form method="POST" action="/productos/:PostId">
+            <input type="hidden" name="_method" value="PATCH" /> 
+            <label>Modificar Productos</label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="text" name="Codigo_Producto" placeholder="Codigo_Producto..." required>
+            <input type="submit" value="Aceptar">
+        </form>
         <div>
             <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
         </div>

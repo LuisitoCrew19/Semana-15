@@ -114,10 +114,19 @@
                 <input type="submit" value="Aceptar">
             </form>
 
-            <form  action="/bodegas/{{}}">
+            <form  action="/bodegas?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
                 <label>Eiminar Bodega </label><br>
                 <input type="text" name="_id" placeholder="ID..." required>
                 <input type="submit" value="Eliminar">
+            </form>
+
+            <form method="POST" action="/bodegas/:PostId">
+                <input type="hidden" name="_method" value="PATCH" /> 
+                <label>Modificar Bodega </label><br>
+                <input type="text" name="_id" placeholder="ID..." required>
+                <input type="text" name="Codigo_Bodega" placeholder="Codigo..." required>
+                <input type="submit" value="Aceptar">
             </form>
            
             <div>

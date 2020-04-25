@@ -91,22 +91,25 @@
             
             <input type="submit" value="Agregar">
         </form>
-        <div>
+        <form method="GET" action="/tipo_materia_prima" target="_blank">
+            <label>Buscar Tipo de Materia Prima </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Aceptar">
+        </form>
 
-            <br>
-            <br>
-    
-            <button id="btnEliminar" onsubmit="">Eliminar</button>
-            
-            <button id="btnCrear" onsubmit="">Crear</button>
-            <br>
-            <br>
-    
-    
-    
-    
-    
-        </div>
+        <form  action="/tipo_materia_prima" method="POST">
+            <label>Eiminar Tipo de Matria Prima </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Eliminar">
+        </form>
+
+        <form method="POST" action="/tipo_materia_prima/:PostId">
+            <input type="hidden" name="_method" value="PATCH" /> 
+            <label>Modificar Tipo de Materia Prima</label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="text" name="Codigo_TPM" placeholder="Codigo_TPM..." required>
+            <input type="submit" value="Aceptar">
+        </form>
         <div>
             <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
         </div>

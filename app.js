@@ -78,13 +78,13 @@ app.use('/crear_pedidos_materia', cpmRoute);
 
 
 
-//app.use("/", (req, res) => {
-  //res.sendFile(__dirname + "/bodegas.html");
- //});
-
- app.get("/", checkAuthenticated, (req, res) => {
-  res.render('../bodegas.html');
+app.use("/", (req, res) => {
+  res.sendFile(__dirname + "/bodegas.html");
  });
+
+ //app.get("/", checkAuthenticated, (req, res) => {
+  res.render('../bodegas.html');
+ 
 
  app.get("/login", checkNotAuthenticated,(req, res) => {
   res.render('login.ejs');
@@ -97,11 +97,11 @@ app.use('/crear_pedidos_materia', cpmRoute);
  }))
 
  app.get("/register", checkNotAuthenticated,(req, res) => {
-  res.render('register.ejs');
+ res.render('register.ejs');
  });
 
  app.post("/register", checkNotAuthenticated ,async (req, res) => {
-   try{
+    try{
       const hashedPasssword = await bcrypt.hash(req.body.password, 10)
       users.push({
         id: Date.now().toString(),
@@ -115,7 +115,7 @@ app.use('/crear_pedidos_materia', cpmRoute);
    }catch{
       res.redirect('/register')
    }
- });
+  });
 
  app.delete('/logout', (req,res) => {
    req.logout()

@@ -101,22 +101,25 @@
             <input type="text" name="Estado" placeholder="Estado..." required>
             <input type="submit" value="Agregar ">
         </form>
-        <div>
+        <form method="GET" action="/posts" target="_blank">
+            <label>Buscar Usuarios </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Aceptar">
+        </form>
 
-            <br>
-            <br>
-    
-            <button id="btnEliminar" onsubmit="">Eliminar</button>
-            
-            <button id="btnCrear" onsubmit="">Crear</button>
-            <br>
-            <br>
-    
-    
-    
-    
-    
-        </div>
+        <form  action="/posts?_method=DELETE" method="POST">
+            <label>Eiminar Usuarios </label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="submit" value="Eliminar">
+        </form>
+
+        <form method="POST" action="/posts/:PostId">
+            <input type="hidden" name="_method" value="PATCH" /> 
+            <label>Modificar Usuarios</label><br>
+            <input type="text" name="_id" placeholder="ID..." required>
+            <input type="text" name="Email" placeholder="Email..." required>
+            <input type="submit" value="Aceptar">
+        </form>
         <div>
             <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
         </div>
