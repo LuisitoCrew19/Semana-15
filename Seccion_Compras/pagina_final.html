@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
-
 <head>
-    <title>Bodegas</title>
-</head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script type="text/javascript" src="/routes/bodegas.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
 
 <body style="background-color:powderblue;">
+
     <div class="wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black;">
             <a class="navbar-brand" href="#"></a>
@@ -24,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href=""><b>Tramesquin S.A</b> <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href=""><b>Tramesquin S.A</b><span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"></a>
@@ -46,6 +45,7 @@
                             <a class="dropdown-item" href="clientes.html">Clientes</a>
                             <a class="dropdown-item" href="parametros.html">Parametros</a>
                             <a class="dropdown-item" href="productos.html">Productos</a> 
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="Login.html">Log out</a>
                         </div>
@@ -56,16 +56,17 @@
                             Tablas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Tablas/tabla_bodegas.html">Bodegas</a>
-                            <a class="dropdown-item" href="Tablas/tabla_camiones.html">Camiones</a>
-                            <a class="dropdown-item" href="Tablas/tabla_consecutivos.html">Consecutivos</a>
-                            <a class="dropdown-item" href="Tablas/tabla_eventos.html">Eventos</a>
-                            <a class="dropdown-item" href="Tablas/tabla_materiaprima.html">Materia Prima</a>
-                            <a class="dropdown-item" href="Tablas/tabla_roles.html">Roles</a>
-                            <a class="dropdown-item" href="Tablas/tabla_tipo_materiaprima.html">Tipo de Materia Prima</a>
+                            <a class="dropdown-item" href="../tabla_bodegas.html">Bodegas</a>
+                            <a class="dropdown-item" href="../tabla_camiones.html">Camiones</a>
+                            <a class="dropdown-item" href="../tabla_consecutivos.html">Consecutivos</a>
+                            <a class="dropdown-item" href="../tabla_eventos.html">Eventos</a>
+                            <a class="dropdown-item" href="../tabla_materiaprima.html">Materia Prima</a>
+                            <a class="dropdown-item" href="../tabla_roles.html">Roles</a>
+                            <a class="dropdown-item" href="../tabla_tipo_materiaprima.html">Tipo de Materia Prima</a>
+                            
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Login.html">Salir</a>
+                            <a class="dropdown-item" href="Login.html">Log out</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -74,17 +75,18 @@
                             Compras
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Seccion_Compras/productos.html">Productos</a>
-                            <a class="dropdown-item" href="Seccion_Compras/materia_prima.html">Materia Prima</a>
-                            <a class="dropdown-item" href="Seccion de Compras/tabla_consecutivos.html"></a>
+                            <a class="dropdown-item" href="productos.html">Productos</a>
+                                                      <a class="dropdown-item" href="Seccion_Compras/materia_prima.html">Materia Prima</a>
+
+                            <a class="dropdown-item" href=".html">Tipo de Materia Prima</a>
                             
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Login.html">Log out</a>
+                            <a class="dropdown-item" href="Login.html"> Log out</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="posts.html">Usuario</a>
+                        <a class="nav-link" href="../posts.html">Usuario</a>
                     </li>
                     
                 </ul>
@@ -98,68 +100,11 @@
 
             </div>
         </nav>
-        <div>
-        <div style="position: relative; left: 50px;">
-            <h1>Informacion de Bodegas</h1>
-        
-       
-        <div style="position: relative; left: 50px;">
-            <form method="POST" action="/bodegas" class="col-sm-2 row">
-                <label>Crear Bodega </label><br>
-                <input type="text" name="Codigo_Bodega" placeholder="Codigo..." required>
-                <br>
-                <br>
-                <input type="text" name="Nombre" placeholder="Nombre..." required>
-                <br>
-                <br>
-                <input type="text" name="Nombre_Corto" placeholder="Nombre Corto..." required>
-                <br>
-                <br>
-                <input type="text" name="Alias" placeholder="Alias..." required>
-                <br>
-                <br>
-                <input type="text" name="Ubicacion" placeholder="Ubicacion.." required>
-                <br>
-                <br>
-                <input type="text" name="Unidad_Medida" placeholder="Unidad de Medida.." required>
-                <br>
-                <br>
-                <input type="text" name="Tipo_Bodega" placeholder="Tipo de Bodega.." required>
-                 <br>
-                <br>
-                <input type="text" name="Espacio_Bodega" placeholder="Espacio en Bodega.." required>
-                <input type="submit" value="Crear">
-            </form>
-        
-            <form method="GET" action="/bodegas" target="_blank">
-                <label>Buscar Bodega </label><br>
-                <input type="text" name="_id" placeholder="ID..." required>
-                <input type="submit" value="Aceptar">
-            </form>
 
-            <form  action="/bodegas?_method=DELETE" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-                <label>Eiminar Bodega </label><br>
-                <input type="text" name="_id" placeholder="ID..." required>
-                <input type="submit" value="Eliminar">
-            </form>
-
-            <form method="POST" action="/bodegas/:PostId">
-                <input type="hidden" name="_method" value="PATCH" /> 
-                <label>Modificar Bodega </label><br>
-                <input type="text" name="_id" placeholder="ID..." required>
-                <input type="text" name="Codigo_Bodega" placeholder="Codigo..." required>
-                <input type="submit" value="Aceptar">
-            </form>
-           
-            <div>
-                <button id="btnSalida" onclick="location.href='Login.html'">Salir</button>
-            </div>
 
         </div>
-    </div>
-        <script src="./routes/bodegas.js"></script>
+        <div style="position: relative; left: 50px;"class="col-sm-2 row" > 
+               <h3>Muchas Gracias por su Compra</h3>
+</div>
 
 </body>
-
-</html>
