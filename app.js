@@ -13,6 +13,8 @@ const flash = require ('express-flash')
 const session = require ('express-session')
 const methodOverride = require ('method-override')
 
+
+
 const initializedPassport = require('./passport-config')
 initializedPassport(
   passport, 
@@ -39,6 +41,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
+app.engine('html', require('ejs').renderFile);
 //import 
 
 const postsRoute = require('./routes/posts');
@@ -79,16 +82,9 @@ app.use('/crear_pedidos_materia', cpmRoute);
   //res.sendFile(__dirname + "/bodegas.html");
  //});
 
-
  app.get("/", checkAuthenticated, (req, res) => {
-  app.engine('html', require('ejs').renderFile);
-
   res.render('../bodegas.html');
-  
-  
-
-
-  });
+ });
 
  app.get("/login", checkNotAuthenticated,(req, res) => {
   res.render('login.ejs');
